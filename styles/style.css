@@ -18,21 +18,31 @@
   display: grid;
   justify-items: center;
   background-color: var(--background-color);
-  border: 2px solid var(--main-color);
+  outline: 2px solid var(--main-color);
   margin-block: 100px;
-  font-family: 'Press Start 2P', fantasy;
+  font-family: var(--accent-font);
   text-transform: uppercase;
 }
 
 .header,
 .main {
-  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
 }
 
-.header__subtitle {
+.header__logo {
   margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   margin-block-end: clamp(0.875rem, 0.6989rem + 0.7512vw, 1.375rem);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
+}
+
+.header__logo:focus {
+  outline: none;
+}
+
+.header__logo:focus-visible {
+  opacity: 0.6;
+  outline: none;
 }
 
 .header__title {
@@ -55,7 +65,7 @@
   position: relative;
   padding: 0;
   border: none;
-  font-family: 'Press Start 2P', fantasy;
+  font-family: var(--accent-font);
   font-size: 14px;
   background-color: transparent;
   cursor: pointer;
@@ -96,6 +106,14 @@
   left: -20px;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(3.25rem, 3.294rem + -0.1878vw, 3.125rem);
+  padding-block-end: clamp(6.25rem, 6.184rem + 0.2817vw, 6.4375rem);
+}
+
 .main__card-list {
   display: flex;
   flex-direction: column;
@@ -105,12 +123,12 @@
 
 .main__card-item {
   background-color: var(--background-color);
-  border: 2px solid var(--main-color);
+  outline: 2px solid var(--main-color);
 }
 
-.main__picture-wrap {
+.main__card-picture-wrap {
   position: relative;
-  block-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+  block-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
 }
 
 .label {
@@ -125,6 +143,7 @@
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
+  z-index: 2;
 }
 
 @supports ((text-stroke: 1px var(--outline-color)))
@@ -134,19 +153,20 @@
   }
 }
 
-.main__picture {
+.main__card-picture {
   block-size: 100%;
   object-fit: cover;
+  outline: 2px solid var(--main-color);
 }
 
-.main__title {
+.main__card-title {
   padding: 4px 10px 6px;
   font-size: 18px;
   font-variation-settings: 'wght' var(--titles-font-weight);
   line-height: 21.78px;
 }
 
-.main__description-block {
+.main__card-description-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,7 +175,7 @@
   margin-inline: 25px;
 }
 
-.main__description {
+.main__card-description {
   font-size: 18px;  
   line-height: 21px;
 }
@@ -196,7 +216,7 @@
   border: 2px solid var(--main-color);
   background-color: transparent;
   cursor: pointer;
-  font-family: 'Press Start 2P', fantasy;
+  font-family: var(--accent-font);
   font-size: 14px;
 }
 
@@ -204,15 +224,6 @@
 .card__like-button {
   block-size: 38px;
   inline-size: 130px;  
-}
-
-.card__like-button:focus {
-  outline: none;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--main-color);
-  transition: box-shadow var(--animation-fluency) ease;
 }
 
 .button:hover::before {
@@ -226,42 +237,43 @@
   animation: filling 0.5s ease-in-out;
 }
 
-.button__text {
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
+  transition: box-shadow var(--animation-fluency) ease;
+}
+
+.button__text,
+.button__icon {
   display: block;
   mix-blend-mode: difference;
   color: var(--button-text-color);
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-  block-size: clamp(14.75rem, 15.3662rem + -2.6291vw, 13rem);
-  inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
-}
-
-.footer__button {
+.main__button {
   display: flex;
   flex-direction:  row;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  block-size: clamp(5.25rem, 5.8882rem + -2.723vw, 3.4375rem);
   inline-size: fit-content;
   background-color: var(--background-color);
   border: 2px solid var(--main-color);
-  margin-block-start: clamp(3.25rem, 3.294rem + -0.1878vw, 3.125rem);
-  padding-inline: 20px;  
+  padding-inline: 15px;
+  padding-block: 10px;
 }
 
 .button__icon {
-  color: var(--main-color);
   inline-size: 28px;
   block-size: 28px;
 }
 
 @media (max-width: 768px) {
-  .footer__button {
+  .main__button {
     flex-direction:  column;
 }
 }
@@ -311,14 +323,14 @@
 } 
 
 .dialog__text {
-  font-family: 'Press Start 2P', fantasy;
+  font-family: var(--accent-font);
   font-size: 14px;
   text-transform: uppercase;
   line-height: 21px;
   color: var(--main-color);
 }
 
-.footer__button .button__text {
+.main__button .button__text {
   inline-size: 100%;
 }
 
@@ -326,30 +338,30 @@
   inline-size: 90px;
 }
 
-.card-2-picture {
+.card-picture-opacity-filter {
   filter: opacity(0.8);
 }
 
-.card-3-picture {
+.card-picture-grayscale-filter {
   filter: grayscale(0.8);
 }
 
-.card-4-picture {
+.card-picture-saturate-filter {
   filter: saturate(158%);
 }
 
-.card-5-picture {
+.card-picture-hue-rotate-filter {
   filter: hue-rotate(-90deg);
 }
 
-.card-6-picture {
+.card-picture-sepia-filter {
   filter: sepia(80%);
 }
 
-.card-7-picture {
+.card-picture-invert-filter {
   filter: invert(0.7);
 }
 
-.card-8-picture {
+.card-picture-multi-filter {
   filter: sepia(1) contrast(2) brightness(200%);
 }

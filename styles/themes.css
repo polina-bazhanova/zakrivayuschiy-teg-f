@@ -15,6 +15,7 @@
   --heart-icon-sparks-color: #FF0000;
   --heart-icon-fill-color: #000;
   --heart-icon-action-fill-color: #FF0000;
+  --accent-font: 'Press Start 2P', fantasy;
 }
 
 :root.theme-dark {
@@ -34,6 +35,7 @@
   --heart-icon-sparks-color: #FF0000;
   --heart-icon-fill-color: #00CC14;
   --heart-icon-action-fill-color: #FF0000;
+  --accent-font: 'Press Start 2P', fantasy;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,5 +56,6 @@
     --heart-icon-sparks-color: #FF0000;
     --heart-icon-fill-color: #00CC14;
     --heart-icon-action-fill-color: #FF0000;
+    --accent-font: 'Press Start 2P', fantasy;
     }
 }
