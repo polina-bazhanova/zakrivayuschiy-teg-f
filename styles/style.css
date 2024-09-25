@@ -20,7 +20,7 @@
   background-color: var(--background-color);
   outline: 2px solid var(--main-color);
   margin-block: 100px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Impact, fantasy;
   text-transform: uppercase;
 }
 
@@ -65,7 +65,7 @@
   position: relative;
   padding: 0;
   border: none;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Impact, fantasy;
   font-size: 14px;
   background-color: transparent;
   cursor: pointer;
@@ -139,7 +139,7 @@
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: 1px var(--outline-color);
-  font-family: 'Press Start 2P';
+  font-family: var(--accent-font), Impact, fantasy;
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
@@ -216,7 +216,7 @@
   border: 2px solid var(--main-color);
   background-color: transparent;
   cursor: pointer;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Impact, fantasy;
   font-size: 14px;
 }
 
@@ -323,7 +323,7 @@
 } 
 
 .dialog__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Impact, fantasy;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 21px;

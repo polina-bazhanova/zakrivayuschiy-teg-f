@@ -4,7 +4,7 @@
   --main-font-weight: 400;
   --titles-font-weight: 700;
   --background-color: #FFF;
-  ---main-color: #000;
+  --main-color: #000;
   --background-image: 
   repeating-linear-gradient(to right,#d3d3d3 0 2px, transparent 2px 4px),
   repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
@@ -15,12 +15,11 @@
   --heart-icon-sparks-color: #FF0000;
   --heart-icon-fill-color: #000;
   --heart-icon-action-fill-color: #FF0000;
-  --accent-font: 'Press Start 2P', fantasy;
-}
+  --accent-font: 'Press Start 2P';
+} 
 
 :root.theme-dark {
   --main-font: 'Inter';
-  --accent-font: 'Press Start 2P';
   --main-font-weight: 465;
   --titles-font-weight: 785;
   --background-color: #000;
@@ -35,7 +34,6 @@
   --heart-icon-sparks-color: #FF0000;
   --heart-icon-fill-color: #00CC14;
   --heart-icon-action-fill-color: #FF0000;
-  --accent-font: 'Press Start 2P', fantasy;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,6 +54,5 @@
     --heart-icon-sparks-color: #FF0000;
     --heart-icon-fill-color: #00CC14;
     --heart-icon-action-fill-color: #FF0000;
-    --accent-font: 'Press Start 2P', fantasy;
     }
 }
